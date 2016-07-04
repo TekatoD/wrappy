@@ -1,0 +1,6 @@
+find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+set(SOURCE_FILES WrapPy.cpp WrapPy.h)
+add_library(wrappy ${SOURCE_FILES})
+target_include_directories(wrappy PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(wrappy ${PYTHON_LIBRARIES} tcmalloc profiler)
